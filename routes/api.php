@@ -30,6 +30,3 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch('/books/{book}', [BookController::class, 'update']);
     Route::delete('/books/{book}', [BookController::class, 'destroy']);
 });
-
-Route::get('/books', [BookController::class, 'index']);
-Route::get('/books/{book}', [BookController::class, 'show']);
