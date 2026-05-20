@@ -19,7 +19,8 @@ Route::get('/ping', function () {
 Route::apiResource('books', BookController::class);
 
 Route::post('/register', [UserController::class, 'register']);
-Route::post('/login', [UserController::class, 'login']);
+// Route::post('/login', [UserController::class, 'login']); 
+Route::middleware('throttle:10,1')->post('/login', [UserController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
 
